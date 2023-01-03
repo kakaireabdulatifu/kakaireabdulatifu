@@ -1,10 +1,25 @@
-- 👋 Hi, I’m @kakaireabdulatifu
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-+256704273422 WhatsApp
-<!---
-kakaireabdulatifu/kakaireabdulatifu is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+dependencies {
+    def appCenterSdkVersion = '4.4.5'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}from tkinter import Tk, Label, Button, Entry
+
+
+class Root(Tk):
+    def __init__(self):
+        super().__init__()
+        self.title_label = Label(self, text="A simple eval-based calculator, \nnot for production usage :)")
+        self.title_label.pack()
+        self.entry = Entry(self)
+        self.entry.pack()
+        self.entry.insert(0, "1+2")
+        self.label = Label(self, text="")
+        self.label.pack()
+        self.button = Button(self, text="Compute", command=self.onclick)
+        self.button.pack()
+
+    def onclick(self):
+        self.label.configure(text=str(eval(self.entry.get())))
+
+
+root = Root()
+root.mainloop()
+
